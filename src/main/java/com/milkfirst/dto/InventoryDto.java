@@ -13,7 +13,6 @@ public class InventoryDto {
 
     private LocalDateTime lastUpdated;
 
-    @NotNull
     private int productId;
 
     public @Min(0) int getAvailableQuantity() {
@@ -32,11 +31,11 @@ public class InventoryDto {
         this.lastUpdated = lastUpdated;
     }
 
-    public @NotNull int getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(@NotNull int productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 

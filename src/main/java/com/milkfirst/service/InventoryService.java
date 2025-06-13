@@ -35,7 +35,10 @@ public class InventoryService {
     }
 
     public Inventory updateQuantity(int id,InventoryDto dto){
-        Inventory  inventory=inventoryRepository.findById(id).orElseThrow(() -> new InventoryNotFoundException("Product Not Found : "));
+        Product  product=productRepository.findById(id).orElseThrow(() -> new InventoryNotFoundException("Product Not Found : "));
+
+
+        Inventory inventory = inventoryRepository.findByProduct(product).orElseThrow(() -> new InventoryNotFoundException("Inventory not found :"));
 
         inventory.setAvailableQuantity(dto.getAvailableQuantity());
         inventory.setLastUpdated(LocalDateTime.now());
