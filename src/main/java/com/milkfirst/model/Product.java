@@ -28,6 +28,8 @@ public class Product {
     @NotBlank
     private String unit;
 
+    private String number;
+
 
     public int getProductId() {
         return productId;
